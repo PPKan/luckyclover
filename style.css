@@ -1,0 +1,170 @@
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #e6f3e6;
+}
+
+.game-container {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #2e8b57;
+  margin-bottom: 20px;
+}
+
+#clover-container {
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+  position: relative;
+  background-color: #f0fff0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+}
+
+#clover {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#clover {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.leaf {
+  position: absolute;
+  width: 21%;  /* 再縮小 40% */
+  height: 21%; /* 再縮小 40% */
+  border-radius: 0 50% 50% 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.leaf::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0 50% 50% 50%;
+  transform: scale(0.9);
+}
+
+.leaf:hover {
+  filter: brightness(1.1);
+}
+
+.stem {
+  position: absolute;
+  width: 2%;
+  height: 50%;
+  background-color: #228B22;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+#game-info {
+  margin-top: 20px;
+}
+
+#leaves-count {
+  font-size: 18px;
+  color: #2e8b57;
+  margin-bottom: 10px;
+}
+
+#restart {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#restart:hover {
+  background-color: #45a049;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+  animation: modalopen 0.4s;
+}
+
+@keyframes modalopen {
+  from {opacity: 0; transform: scale(0.8);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#result-text {
+  margin-top: 10px;
+  color: #2e8b57;
+  font-size: 24px;
+}
+
+#love-status {
+  font-size: 18px;
+  color: #2e8b57;
+  margin-bottom: 10px;
+  min-height: 27px; /* 防止文字出現時頁面跳動 */
+}
