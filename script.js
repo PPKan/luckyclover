@@ -60,9 +60,9 @@ function updateLoveStatus() {
     if (currentLeaves === totalLeaves) {
         loveStatus.textContent = ''; // 遊戲開始時不顯示文字
     } else if (isFirstClick) {
-        loveStatus.textContent = "她喜歡你";
+        loveStatus.textContent = "她喜歡我";
     } else {
-        loveStatus.textContent = (totalLeaves - currentLeaves) % 2 === 1 ? "她喜歡你" : "她不喜歡你";
+        loveStatus.textContent = (totalLeaves - currentLeaves) % 2 === 1 ? "她喜歡我" : "她不喜歡我";
     }
 }
 
